@@ -1,0 +1,29 @@
+<button class="btn btn-primary"
+        (click)="showpost()">{{showButton ? 'Hide Post' : 'View/Edit Post'}}</button>
+
+<div *ngIf="showButton">
+  <div class="panel-body">
+    <form>
+      <div class="form-group">
+        <label>Title</label>
+        <input type="text" class="form-control" placeholder="Title"
+               name="title" [(ngModel)]="editpost.title">
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" placeholder="Description"
+               name="description" [(ngModel)]="editpost.description">
+      </div>
+    </form>
+  </div>
+
+  <div class="panel-footer">
+    <button class="btn btn-primary" style="margin-right: 10px"
+            (click)="onUpdatePost()">
+      Update</button>
+
+
+    <button class="btn btn-primary" (click)="onDeletePost(editpost)">
+      Delete</button>
+  </div>
+</div>

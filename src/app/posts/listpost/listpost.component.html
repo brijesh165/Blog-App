@@ -1,0 +1,20 @@
+<div class="panel panel-primary" *ngFor="let post of posts; index as i">
+    <div class="panel-heading">
+      <label> Post Title :  {{ post.title}}</label> <br />
+      <label>Created By :  {{ post.createdBy}}</label> <br />
+    </div>
+
+    <div class="panel-body">
+      {{post.description}}
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn btn-primary" style="margin-right: 10px">
+        <span class="glyphicon glyphicon-thumbs-up"></span>
+      </button>
+      <app-comments [post_id]=post._id></app-comments>
+      <app-editpost [posts]=post></app-editpost>
+    </div>
+</div>
+
+

@@ -1,0 +1,34 @@
+<button class="btn btn-primary" style="margin-right: 10px"
+        (click)="toggleButton()">
+  {{showButton ? 'Hide Comment' : 'Add Comment'}}
+</button>
+
+<div *ngIf="showButton">
+  <br /><br />
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      <h4>Add Comment</h4>
+    </div>
+
+    <div class="panel-body">
+      <form>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" placeholder="Title"
+          name="title" [(ngModel)]="addcomment.title">
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <input type="text" class="form-control" placeholder="Description"
+          name="description" [(ngModel)]="addcomment.description">
+        </div>
+      </form>
+    </div>
+
+    <div class="panel-footer">
+      <button class="btn btn-primary" (click)="onAddComment()">
+        <span class="glyphicon glyphicon-plus"></span>
+        Add Comment</button>
+    </div>
+  </div>
+</div>
